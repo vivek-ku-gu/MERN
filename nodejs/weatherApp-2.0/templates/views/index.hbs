@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css" />
+
+  <title>WeatherApp</title>
+</head>
+
+<body>
+  {{>navbar}}
+        <!-- header -->
+        <div class="header col-lg-6 col-12 container-fluid mx-auto">
+
+          <p style="color: black;">Welcome to the WeatherApp</p>
+          <h1 style="color: black;">Get the <span style="color: rgb(2, 160, 223);">Weather</span> Information of your city in a click</h1>
+         <a href="weather"><img id="button" src="images/bt1.png" alt="button"></a> 
+        </div>
+        <!-- slider -->
+        <div class="container-fluid slider col-lg-5 col-12 mx-auto">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/img1.jpg" class=" w-100" alt="">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img2.jpg" class=" w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img3.jpg" class=" w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img4.jpg" class=" w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img5.jpg" class=" w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img6.jpg" class=" w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img7.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img8.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img9.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img10.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img11.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img12.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img13.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/img14.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+    </div>
+  </div>
+
+  {{>footer}}
+  
+ 
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

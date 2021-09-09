@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+</head>
+<body>
+    <div id="quotes"></div>
+    <div id="author"></div>
+    <button id="newquotes">new quote</button>
+    <button id="tweet">tweet</button>
+    <script>
+        let data="";
+        let quote;
+            const quotes  = document.getElementById("quotes");
+            const author  = document.getElementById("author");
+            const newQ  = document.getElementById("newquotes");
+            const tweet  = document.getElementById("tweet");
+            const tweetqoute = ()=>{
+                 let tweet = `https://twitter.com/intent/tweet?text=${quote}`;
+                 window.open(tweet);
+             };
+
+        const getRandom = ()=>{
+ let rnum =Math.floor(Math.random()*1644);
+ return rnum;
+        }
+        const getQuotes= async()=>{
+            try{data =await fetch("https://type.fit/api/quotes");}
+            catch(error){
+                console.log(error);
+            }
+             let orgdata= await data.json();
+             let random=getRandom();
+             console.log(random);
+             console.log(orgdata[random].text);
+             console.log(orgdata[random].author);
+             quote= orgdata[random].text;
+             quotes.innerText = `${orgdata[random].text}`;
+             orgdata[random].author == null
+             ? (author.innerText = "Unknown")
+             : (author.innerText = `${orgdata[random].author}`);
+        };
+        newQ.addEventListener("click",getQuotes); 
+        tweet.addEventListener("click",tweetqoute); 
+        getQuotes();
+        tweetqoute();
+    
+    </script>
+</body>
+</html>

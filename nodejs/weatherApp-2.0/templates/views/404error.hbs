@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{>csslinks}}
+    <title>error page</title>
+    <style>
+h1{
+    height: 100%;
+    margin-top: 500px;
+  
+    
+}
+.content{
+  margin-top: 30px;
+  color: #000;
+}
+.btn{
+    width: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color:  rgb(76, 180, 221);
+  background-color: rgb(14, 131, 177);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: rgb(14, 131, 177)}
+
+.button:active {
+  background-color: rgb(2, 160, 223);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+    </style>
+</head>
+<body>
+    {{>navbar}}
+    <h1 class="content">Error <span style="color: rgb(2, 160, 223);">404</span> occured</h1>
+    <div style="margin-top: 40px;"><img src="images/4041.jpg" height="350px" width="400px"></div>
+    <button type="button" class="btn btn-primary mx-auto button"><a href="/" style="text-decoration: none">Go back</a> </button>
+      {{>footer}}
+    {{>script}}
+</body>
+</html>

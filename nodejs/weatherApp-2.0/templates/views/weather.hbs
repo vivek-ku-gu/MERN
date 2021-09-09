@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css" />
+
+  <title>WeatherApp</title>
+</head>
+
+<body>
+  {{>navbar}}
+
+  <div class="search mx-auto">
+    <form class="city">
+      <input type="text" id="cityname" placeholder="Enter your city name" autocomplete="off">
+      <input type="submit" value="search" id="search_btn">
+    </form>
+  </div>
+  <div class="maincontent mx-auto">
+    <div class="toplayer ">
+      <p id="day">day </p>
+      <p id="date">Date </p>
+    </div>
+    <div class="data_hide">
+      <div class="citylayer">
+        <p id="city">pune</p>
+      </div>
+      <div class="templayer">
+        <p id="temp">temp<span><sup>o</sup>C</span> <i id="weathericon" class="fas fa-cloud"></i></p>
+      </div>
+    </div>
+
+  </div>
+  {{>footer}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
+ 
+  <script>
+    const getCurrentDay = () => {
+      var weekday = new Array(7);
+      weekday[0] = "Sunday";
+      weekday[1] = "Monday";
+      weekday[2] = "Tuesday";
+      weekday[3] = "Wednesday";
+      weekday[4] = "Thursday";
+      weekday[5] = "Friday";
+      weekday[6] = "Saturday";
+      let day = new Date();
+      let days = weekday[day.getDay()];
+
+      return days;
+
+    };
+    const getCurrentTime = () => {
+      var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      let now = new Date();
+      let month = months[now.getMonth()];
+      let date = now.getDate();
+      let hour = now.getHours();
+      let min = now.getMinutes();
+      let Period = "AM";
+      if (hour > 11) {
+        Period = "PM";
+      }
+      if (hour > 12) {
+        hour = hour - 12;
+      }
+      if (min < 10) {
+        min = "0" + min;
+      }
+      return ` ${month}${date} | ${hour}:${min} ${Period}`;
+    };
+    const day = getCurrentDay();
+    const dates = getCurrentTime();
+    const days = document.getElementById('day');
+    const date = document.getElementById('date');
+    days.innerHTML = day;
+    date.innerHTML = dates;
+  </script>
+   <script src="js/main.js"></script>
+</body>
+
+</html>
